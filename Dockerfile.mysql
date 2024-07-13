@@ -4,7 +4,7 @@ FROM mysql:8.0
 # Set environment variables for MySQL
 ENV MYSQL_ROOT_PASSWORD=Apple@3005 \
     MYSQL_DATABASE=loginapp \
-    MYSQL_USER=meghana \
+    MYSQL_USER=db_user \
     MYSQL_PASSWORD=Sujatha@3005
 
 # Copy the SQL dump file into the Docker image for database initialization
