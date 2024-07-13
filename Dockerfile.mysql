@@ -8,7 +8,14 @@ ENV MYSQL_ROOT_PASSWORD=Apple@3005 \
     MYSQL_PASSWORD=Sujatha@3005
 
 # Copy the SQL dump file into the Docker image for database initialization
-COPY /home/ec2-user/project/data.sql /docker-entrypoint-initdb.d/
+COPY data.sql /docker-entrypoint-initdb.d/
+
+# Grant privileges to the MySQL user 'meghana' from any host
+RUN echo " \
+    CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE}; \
+    GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '${MYSQL_USER}'@'%'; \
+    FLUSH PRIVILEGES; \
+    " > /docker-entrypoint-initdb.d/grant-permissions.sql
 
 # Expose port 3306 for MySQL
 EXPOSE 3306
