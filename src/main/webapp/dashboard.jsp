@@ -58,7 +58,7 @@ button:hover {
 </head>
 <body>
 <div class="dashboard-container">
-        <h2>Welcome to the Colorful Dashboard 2!</h2>
+        <h2>Welcome to the Colorful Dashboard 4!</h2>
         <!-- Your colorful content goes here -->
     </div>
 </body>
